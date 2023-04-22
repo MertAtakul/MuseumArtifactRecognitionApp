@@ -1,12 +1,19 @@
-import PIL
-from pathlib import Path
-from PIL import UnidentifiedImageError
+import os
 from PIL import Image
 
-
-path = Path("C:/Users/pc/Desktop/Projects/artifactRecognition/images").rglob("*.webp")
-for img_p in path:
+def check_and_remove_image(image_path):
     try:
-        img = PIL.Image.open(img_p)
-    except PIL.UnidentifiedImageError:
-        print(img_p)
+        img = Image.open(image_path)
+        img.verify()
+        img.close()
+    except (IOError, SyntaxError) as e:
+        print(f"Bozuk resim: {image_path} - {e}")
+        os.remove(image_path)
+
+images_folder = "D:/Projects/artifactRecognition/splitted_images/train"
+
+for root, _, files in os.walk(images_folder):
+    for file in files:
+        if file.lower().endswith(('.jpg', '.jpeg', '.png')):
+            file_path = os.path.join(root, file)
+            check_and_remove_image(file_path)
