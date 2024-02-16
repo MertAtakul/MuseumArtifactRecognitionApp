@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_profile"
+        android:enabled="true"
+        android:icon="@android:drawable/ic_menu_myplaces"
+        android:title="Profilim"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_museums"
+        android:enabled="true"
+        android:icon="@android:drawable/ic_menu_mapmode"
+        android:title="Müzeler"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/action_photo"
+        android:enabled="true"
+        android:icon="@android:drawable/ic_menu_camera"
+        android:title="Kamera"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/action_gallery"
+        android:enabled="true"
+        android:icon="@android:drawable/ic_menu_gallery"
+        android:title="Galeriden Seç"
+        app:showAsAction="always"/>
+</menu>
